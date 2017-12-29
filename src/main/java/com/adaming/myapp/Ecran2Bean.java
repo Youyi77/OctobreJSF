@@ -39,6 +39,7 @@ public class Ecran2Bean {
 			int random= (int) randomD;
 			this.prenom=String.valueOf(random);
 		}
+		//Commentaire test Git
 		return this;
 	}
 	
