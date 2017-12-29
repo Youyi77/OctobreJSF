@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"	
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Rechercher Personne</title>
+</h:head>
+<h:body>
+	<h1>Rechercher Personne</h1>
+	<h:outputText id="champNom" value="#{personneBean.prenom}"></h:outputText>
+	<p:dataTable></p:dataTable>
+	
+	<h:form id="form" role="form">
+	
+	<p:dataTable value="#{createPersonneBean.personnes}" var="p"  id="idTable"  emptyMessage="Aucun résultat trouvé">
+					<p:column headerText="Personne">
+						<h:outputText value="#{p.id}"></h:outputText>
+					</p:column>
+					<p:column headerText="Nom">
+						<h:outputText value="#{p.nom}"></h:outputText>
+						<h:outputText value=" #{p.prenom}"></h:outputText>
+					</p:column>
+					<p:column headerText="Sélection">
+						<p:commandButton value="Choisir"
+							action="#{createPersonneBean.createEvent()}"></p:commandButton>
+					</p:column>
+					
+
+
+				</p:dataTable>
+	
+	
+	
+	
+	
+	<p:commandButton value="Consulter" action="#{personneBean.prenomEvent}" 
+	styleClass="btn btn-default" update="champNom"></p:commandButton>
+	</h:form>	
+	<a href="Ecran2.xhtml">Ecran 2</a>
+</h:body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"	
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Octobre JSF Appli</title>
+</h:head>
+<h:body>
+	<h1>CreationPersonne</h1>
+	<h:outputText id="champNom" value="#{ecran2Bean.prenom}"></h:outputText>
+	
+	<h:form id="form" role="form">
+	<p:commandButton value="Creer" action="#{createPersonneBean.createEvent}" 
+	styleClass="btn btn-default" update="champNom"></p:commandButton>
+	</h:form>	
+	
+	<h:form>
+		<table colspan="4">
+		<tr><td>Nom : </td><td><h:inputText value="#{createPersonneBean.nomPersonne}" accesskey="k" onkeyup="createPersonneBean.hello"/></td>
+			<td>Prenom :</td><td><h:inputText value="#{createPersonneBean.prenomPersonne}" onclick="createPersonneBean.hello"/></td> 
+		</tr>
+		</table>
+		<h:commandButton value="Valider" action="#{createPersonneBean.createPersonneEvent}"
+		styleClass="btn btn-default"></h:commandButton>
+	</h:form>
+	<a href="OctobreJSF.xhtml">Retour à l'accueil</a>
+	<a href="RechercherPersonne.xhtml">RechercherPersonne</a>
+</h:body>
+</html>
